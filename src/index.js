@@ -13,16 +13,23 @@ let cmdSymbol = "@";
 let ping = cl.ping();
 let uptime = cl.uptime();
 
+//Console check to see if the bot is working.
 cl.on("ready", () => {
   console.log(`Logged in as ${cl.user.tag}.`);
 })
 
+/*
+  Ping command: sends delay time to server
+*/
 cl.on("message", msg => {
   if (msg.content === `${cmdSymbol}ping`) {
     msg.reply(`Pong! The response time is ${ping}`);
   }
 })
 
+/*
+  Uptime command: sends time since boot up to server
+*/
 cl.on("message", msg => {
   if (msg.content === `${cmdSymbol}status`) {
     msg.reply(`Uptime: **${uptime}**`);
