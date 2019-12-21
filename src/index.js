@@ -15,25 +15,36 @@ let uptime = cl.uptime();
 
 //Console check to see if the bot is working.
 cl.on("ready", () => {
-  console.log(`Logged in as ${cl.user.tag}.`);
+      console.log(`Logged in as ${cl.user.tag}.`);
 })
 
 /*
   Ping command: sends delay time to server
 */
 cl.on("message", msg => {
-  if (msg.content === `${cmdSymbol}ping`) {
-    msg.reply(`Pong! The response time is ${ping}`);
-  }
+      if (msg.content === `${cmdSymbol}ping`) {
+            msg.reply(`Pong! The response time is ${ping}`);
+      }
 })
 
 /*
   Uptime command: sends time since boot up to server
 */
 cl.on("message", msg => {
-  if (msg.content === `${cmdSymbol}status`) {
-    msg.reply(`Uptime: **${uptime}**`);
-  }
+      if (msg.content === `${cmdSymbol}status`) {
+            msg.reply(`Uptime: **${uptime}**`);
+      }
 })
+
+/*
+  Server greeter: sends a message for every single new member joining the guild.
+*/
+cl.on("guildMemberAdd", member => {
+      //Sets variable for member's channel so the bot can DM said member
+      const channel = member.guild.channels.find(ch => ch.name === "member-log")
+      if (!channel) return;
+      channel.send(`Welcome to the Void Linux server, ${member}`)
+})
+
 
 cl.login("placeholder");
