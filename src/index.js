@@ -4,7 +4,7 @@
 */
 
 import Discord from "discord.js";
-import { testEmbed } from 'richEmbeds.js';
+import { testEmbed, helpEmbed } from 'richEmbeds.js';
 import fs from "fs";
 
 const cl = new Discord.client();
@@ -77,6 +77,18 @@ cl.on("message", msg => {
 */
 cl.on("message", msg => {
     if (msg.content.startsWith(`${cmdSymbol}changeSymbol`)) {
+        //placeholder
+    }
+});
 
+
+/*
+  Help command: DMs rich embed to user
+*/
+cl.on("message", member => {
+    const channel = member.guild.channels.find(ch => ch.name === "member-log");
+    if (!channel) return;
+    if (msg.content === `${cmdSymbol}help`) {
+        channel.send(helpEmbed);
     }
 });
