@@ -7,9 +7,8 @@ import Discord from "discord.js";
 import { testEmbed, helpEmbed } from 'richEmbeds.js';
 import fs from "fs";
 
-const cl = new Discord.client();
-client.commands = new Discord.Collection();
-
+const cl = new Discord.Client();
+cl.commands = new Discord.Collection();
 //TODO: implement configs as JSON
 
 
@@ -77,7 +76,7 @@ cl.on("message", msg => {
 */
 cl.on("message", msg => {
     if (msg.content.startsWith(`${cmdSymbol}changeSymbol`)) {
-        //placeholder
+        //TODO: Finish this
     }
 });
 
@@ -85,10 +84,8 @@ cl.on("message", msg => {
 /*
   Help command: DMs rich embed to user
 */
-cl.on("message", member => {
+cl.on("message",member => {
     const channel = member.guild.channels.find(ch => ch.name === "member-log");
     if (!channel) return;
-    if (msg.content === `${cmdSymbol}help`) {
-        channel.send(helpEmbed);
-    }
+    if (msg.content === `${cmdSymbol}help`) channel.send(helpEmbed);
 });
