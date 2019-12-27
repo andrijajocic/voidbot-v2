@@ -108,3 +108,6 @@ dist
 
 #Idea project files
 .idea
+
+#Index.js (made because it is going to house a private token)
+index.js

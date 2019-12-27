@@ -64,7 +64,7 @@ cl.on("guildMemberAdd", member => {
 /*
   Test embed: tests rich embedding
 */
-cl.on("message", msg => {
+cl.on('message', msg => {
     if (msg.content === `${cmdSymbol}testEmbed` ) {
         msg.reply(testEmbed);
     }
@@ -74,7 +74,7 @@ cl.on("message", msg => {
 /*
   Change cmdSymbol: command for changing the command prefix
 */
-cl.on("message", msg => {
+cl.on('message', msg => {
     if (msg.content.startsWith(`${cmdSymbol}changeSymbol`)) {
         //TODO: Finish this
     }
@@ -89,3 +89,8 @@ cl.on("message",member => {
     if (!channel) return;
     if (msg.content === `${cmdSymbol}help`) channel.send(helpEmbed);
 });
+
+
+/*
+  
+*/
