@@ -1,5 +1,5 @@
 {
-  "name": "voidbot-v2npm ",
+  "name": "voidbot-v2",
   "version": "v1.0.0b",
   "description": "Discord bot for the Void Linux server. made using Discord.js",
   "main": "index.js",
