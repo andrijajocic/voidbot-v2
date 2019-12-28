@@ -5,7 +5,6 @@
 
 import Discord from "discord.js";
 import { testEmbed, helpEmbed } from 'richEmbeds.js';
-import fs from "fs";
 
 const cl = new Discord.Client();
 cl.commands = new Discord.Collection();
@@ -21,6 +20,7 @@ let uptime = cl.uptime();
 cl.on("ready", () => {
     console.log(`Logged in as ${cl.user.tag}.`);
 });
+
 
 /*
   ==============================================================================================

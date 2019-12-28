@@ -18,7 +18,9 @@
   "author": "salty",
   "license": "BSD",
   "dependencies": {
+    "assert": "^2.0.0",
     "discord.js": "^11.5.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "mongodb": "^3.4.1"
   }
 }
