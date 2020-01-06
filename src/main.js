@@ -62,7 +62,7 @@ cl.on("guildMemberAdd", member => {
 
 
 /*
-  Test embed: tests rich embedding
+  Test embed: tests rich embedding.
 */
 cl.on('message', msg => {
     if (msg.content === `${cmdSymbol}testEmbed` ) {
@@ -72,11 +72,14 @@ cl.on('message', msg => {
 
 
 /*
-  Change cmdSymbol: command for changing the command prefix
+  Change cmdSymbol: command for changing the command prefix.
+    NOTE: everytime it shuts down, the symbol reverts back to default.
+    TODO: make the symbol permarent forever.
 */
 cl.on('message', msg => {
     if (msg.content.startsWith(`${cmdSymbol}changeSymbol`)) {
-        //TODO: Finish this
+        cmdSymbol = cmdSymbol.split(' ')[1];
+        msg.channel.send(`Command symbol has been set to ${cmdSybmol}`);
     }
 });
 
@@ -89,8 +92,3 @@ cl.on("message",member => {
     if (!channel) return;
     if (msg.content === `${cmdSymbol}help`) channel.send(helpEmbed);
 });
-
-
-/*
-  
-*/
